@@ -1,0 +1,702 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Open+Sans:wght@400;700;800&display=swap');
+
+
+@mixin resetFile {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+;
+
+@mixin makeBtn {
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+;
+
+@mixin sizinLogo {
+    height: 32px;
+    width: 81px;
+}
+
+@mixin mainGridMobile {
+    width: 344px;
+    display: grid;
+    grid-template-columns: 344px;
+    grid-template-rows: repeat(3);
+    margin: 56px auto 237px auto;
+}
+
+@mixin mainGridTablet {
+    width: 689px;
+    height: 653px;
+    grid-template-columns: 1fr 281px;
+    grid-template-rows: 482px 1fr;
+    grid-template-areas:
+        "a b "
+        "c c  ";
+}
+
+@mixin mainGridDesktop {
+    height: 600px;
+    width: 1110px;
+    grid-template-columns: 1fr 350px 286px;
+    grid-template-rows: 1110px;
+    grid-template-areas: "a b c";
+}
+
+@mixin resetMarginBottom {
+    margin-bottom: 0;
+}
+
+a {
+    cursor: pointer;
+}
+
+// mobile
+
+*,
+::before,
+::after {
+    @include resetFile();
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    background-color: #FAF8F6;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+
+header {
+    @include flexCenter(row);
+    width: 343px;
+    height: 48px;
+    margin: 24px auto 0 auto;
+
+    img {
+        margin-right: 80px;
+    }
+
+    a {
+        @include makeBtn();
+        border: 1px solid #172339;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: -0.14px;
+        color: #172339;
+        padding: 12px 16.5px;
+
+        &:hover {
+            background: #172339;
+            color: #FAF8F6;
+        }
+    }
+}
+
+main {
+    @include mainGridMobile();
+
+    #presentation {
+        @include flexCenter(column);
+        width: 343.5px;
+        height: 325.32px;
+        margin-bottom: 55.68px;
+        position: relative;
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url(assets/pattern-curved-line-1.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 151.47px;
+            height: 19px;
+            right: 30px;
+            top: 0;
+
+        }
+
+        h1 {
+
+            font-weight: 400;
+            font-size: 38px;
+            line-height: 44px;
+            letter-spacing: -0.527778px;
+            color: #172339;
+            margin: 8.32px auto 32px auto;
+        }
+
+        p {
+            margin-bottom: 32px;
+            font-size: 16px;
+            line-height: 28px;
+            letter-spacing: 0.0888889px;
+            color: #49566D;
+        }
+
+        a {
+            @include makeBtn();
+            background: #172339;
+            font-size: 18px;
+            line-height: 32px;
+            letter-spacing: -0.18px;
+            color: #FAF8F6;
+            padding: 15px 31px 14px 32px;
+            align-self: flex-start;
+
+            &:hover {
+                background: linear-gradient(135deg, #A060FF 0%, #CB30E3 49.21%, #FFA84E 100%);
+            }
+        }
+    }
+
+    #img-card {
+        width: 343px;
+        height: 240px;
+        border-radius: 15px;
+        background-image: url(assets/image-hero-landscape.png);
+        margin-bottom: 56px;
+    }
+
+    #numbers {
+        .stats {
+            width: 343px;
+            height: 83px;
+            margin-bottom: 32px;
+            text-align: center;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            h2 {
+                font-weight: bold;
+                font-size: 48px;
+                line-height: 56px;
+                text-align: center;
+                color: #172339;
+            }
+
+            p {
+                margin-top: 1px;
+                font-size: 16px;
+                line-height: 26px;
+                letter-spacing: 2.5px;
+                color: #49566D;
+                text-transform: uppercase;
+
+            }
+        }
+    }
+}
+
+#testimonial {
+    @include flexCenter(column);
+    background: #172339;
+    border-radius: 15px;
+    height: 748px;
+    width: 375px;
+    position: relative;
+    border-radius: 15px;
+    margin: 0 auto;
+
+    &::before {
+        content: "";
+        background-image: url(assets/image-jeremy-small.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: 402px;
+        width: 252px;
+        left: 71px;
+        top: -178px;
+        border-radius: 0px;
+    }
+
+    &::after {
+        content: "";
+        background-image: url(assets/pattern-curved-line-2.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: 40px;
+        width: 49.26834487915039px;
+        left: 163PX;
+        top: 301px;
+
+    }
+
+    #txt-card {
+        margin-top: 338px;
+
+        height: 346px;
+
+
+        h3 {
+            font-weight: normal;
+            font-size: 40px;
+            line-height: 48px;
+            text-align: center;
+            letter-spacing: -0.416667px;
+            color: #FAF8F6;
+            margin-bottom: 40px;
+        }
+
+        p {
+            height: 160px;
+            width: 343px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            text-align: center;
+            letter-spacing: 0.09px;
+            margin-bottom: 40px;
+            color: #F3EDE7;
+
+        }
+
+        #author {
+            @include flexCenter(column);
+            margin: auto;
+            height: 58px;
+            width: 190px;
+            text-transform: uppercase;
+
+            h4 {
+                height: 32px;
+                width: 165px;
+
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 32px;
+                text-align: center;
+                letter-spacing: -0.18px;
+                color: #FAF8F6;
+            }
+
+            p {
+
+                height: 26px;
+                width: 190px;
+
+
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 26px;
+                text-align: center;
+                letter-spacing: 2.5px;
+                color: #F3EDE7;
+            }
+
+        }
+    }
+}
+
+footer {
+    @include flexCenter(column);
+    margin: 56px auto;
+    width: 125px;
+    height: 150px;
+
+    p {
+        margin: 33px 0;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 32px;
+        /* identical to box height, or 213% */
+
+        text-align: center;
+        letter-spacing: 0.0833333px;
+
+        /* Grey */
+
+        color: #49566D;
+    }
+
+    #social-media {
+
+        a {
+            width: 20px;
+            height: 20px;
+            margin-right: 27px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &:hover {
+                opacity: 0.5;
+
+
+            }
+        }
+
+
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    header {
+        @include resetMarginBottom();
+        height: 56px;
+        width: 689px;
+
+        img {
+            margin-right: 389px;
+        }
+
+        a {
+            height: 56px;
+            width: 219px;
+            font-size: 16px;
+            line-height: 32px;
+            letter-spacing: -0.16px;
+            color: #172339;
+            padding: 12px 24.5px 12px 23.5px;
+        }
+
+    }
+
+    main {
+        @include mainGridTablet();
+        position: relative;
+        margin: 80px auto 273px auto;
+
+        #presentation {
+            @include resetMarginBottom();
+            grid-area: a;
+            position: absolute;
+            top: 88px;
+            width: 573px;
+            height: 354px;
+
+            &:before {
+                width: 231.19px;
+                height: 29px;
+                left: 240px;
+                top: -30px;
+            }
+
+            h1 {
+                align-self: flex-start;
+                margin: 0;
+                height: 129px;
+                width: 540px;
+                font-size: 56px;
+                line-height: 64px;
+                /* or 114% */
+                letter-spacing: -0.777778px;
+
+                color: #172339;
+
+
+            }
+
+            p {
+                align-self: flex-start;
+                width: 350px;
+                height: 84px;
+                margin: 40px 0;
+                font-size: 16px;
+                line-height: 28px;
+                /* or 175% */
+
+                letter-spacing: 0.0888889px;
+
+                /* Grey */
+
+                color: #49566D;
+            }
+
+            a {}
+        }
+
+        #img-card {
+            @include resetMarginBottom();
+            grid-area: b;
+            background: url(assets/image-hero-portrait.png) no-repeat;
+            background-size: contain;
+            width: 281px;
+            height: 482px;
+        }
+
+        #numbers {
+            display: flex;
+            align-items: baseline;
+            margin-top: 88px;
+            width: 689px;
+            height: 83px;
+            grid-area: c;
+        }
+
+
+    }
+
+    #testimonial {
+        height: 684px;
+        width: 689px;
+        background-image: url(assets/pattern-blur.svg);
+        background-repeat: no-repeat;
+        background-position-y: -150px;
+        background-position-x: center;
+        background-size: 65%;
+
+        &:before {
+            width: 252px;
+            height: 402px;
+            background-image: url(assets/image-jeremy-large.png);
+            background-size: contain;
+            left: 228px;
+        }
+
+        &::after {
+            top: 261px;
+            left: 320px;
+        }
+
+        #txt-card {
+            height: 282px;
+            width: 573px;
+
+            p {
+                @include resetMarginBottom();
+                height: 96px;
+                width: 573px;
+                left: 0px;
+                top: 88px;
+                border-radius: nullpx;
+            }
+
+            #author {
+                height: 58px;
+                width: 190px;
+                margin: 40px auto;
+            }
+        }
+
+    }
+
+    footer {
+        margin: 72px auto;
+        flex-direction: row;
+        height: 32px;
+        width: 689px;
+
+        img {
+            margin-right: 202px;
+        }
+
+        p {
+            height: 32px;
+            width: 125px;
+            flex-direction: row;
+            margin: 0;
+            margin-right: 165px;
+        }
+
+        #social-media {
+            @include flexCenter(row);
+            height: 20px;
+            width: 116px;
+
+
+        }
+
+
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+
+    header {
+        margin-top: 50px;
+        height: 56px;
+        width: 1108.8480224609375px;
+
+        img {
+            margin-right: 810px;
+        }
+
+    }
+
+    main {
+        @include mainGridDesktop();
+        position: relative;
+        height: 600px;
+        width: 1110px;
+
+        #presentation {
+            position: absolute;
+            width: 635px;
+            height: 405px;
+            grid-area: a;
+
+            &::before {
+                height: 36px;
+                width: 287px;
+                left: 289px;
+                top: -21.32px;
+
+            }
+
+            h1 {
+                height: 156px;
+                width: 635px;
+                font-size: 72px;
+                line-height: 78px;
+                /* or 108% */
+
+                letter-spacing: -1px;
+
+            }
+
+            p {
+                height: 96px;
+                width: 350px;
+                font-size: 18px;
+                line-height: 32px;
+                letter-spacing: 0.1px;
+
+
+            }
+        }
+
+        #img-card {
+            width: 350px;
+            height: 600px;
+            grid-area: b;
+        }
+
+        #numbers {
+            margin: 106px 0 auto 96px;
+            flex-direction: column;
+            width: 190px;
+            height: 375px;
+            grid-area: c;
+
+            .stats {
+                width: 190px;
+                height: 83px;
+                margin-bottom: 63px;
+
+                h2,
+                p {
+                    text-align: left;
+                }
+            }
+
+        }
+    }
+
+    #testimonial {
+        display: grid;
+        grid-template-columns: 1fr 475px;
+        grid-template-rows: 545px;
+        grid-template-areas: 'a b';
+        height: 545px;
+        width: 1109px;
+        background-position-x: left;
+        background-position-y: top;
+
+        &::before {
+            height: 589.5569458007812px;
+            width: 359.81011962890625px;
+            top: -45px;
+            left: 121.46px;
+        }
+        &::after{
+            left: 517.2px;
+top: 161.5px;
+        }
+
+        #txt-card {
+            height: 369px;
+            width: 350px;
+            grid-area: b;
+            display: flex;
+            flex-direction: column;
+            margin: 88px 125px 88px 0px;
+            text-align: left;
+            position: relative;
+
+            h3 {
+                width: 350px;
+                text-align: left;
+                font-size: 48px;
+                line-height: 56px;
+                letter-spacing: -0.5px;
+            }
+
+            p {
+                width: 350px;
+                height: 175px;
+                width: 350px;
+                text-align: left;
+                font-size: 20px;
+                line-height: 35px;
+                letter-spacing: 0.1px;
+            }
+
+            #author {
+                margin: 40px 0 0 0;
+                display: flex;
+                align-items: flex-start;
+                justify-self: start;
+                flex-direction: column;
+
+                h4 {
+                    width: 190px;
+                    height: 32px;
+                    margin-left: 0;
+                    height: 32px;
+                    width: 165px;
+                    font-size: 18px;
+                    line-height: 32px;
+                    letter-spacing: -0.18px;
+                }
+
+                p {
+                    text-align: left;
+                    font-size: 16px;
+                    line-height: 26px;
+                    letter-spacing: 2.5px;
+                }
+            }
+        }
+    }
+
+    footer {
+        height: 32px;
+        width: 1109px;
+
+        img.logo {
+            margin-left: 0;
+            height: 32px;
+            width: 81px;
+            align-self: flex-start;
+            margin-right: 410px;
+        }
+
+        p {
+            margin-right: 377px;
+        }
+
+    }
+
+}
